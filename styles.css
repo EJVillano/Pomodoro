@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "M PLUS Rounded 1c", sans-serif;     
+}
+
+.bg-red{
+    background-color: rgba(239, 75, 75, 0.95);
+}
+
+.bg-lightRed{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.time-frame{
+    height: 463px;
+    border-radius: 10px;
+}
+
+.time-font{
+    font-family: "Roboto", sans-serif;
+    font-family: Roboto;
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 211px;
+    letter-spacing: 0em;
+}
+
+.btn-start{
+    width: 18rem;
+    height: 89px;
+    top: 484px;
+    left: 813px;
+    border-radius: 5px;
+    font-family: Rounded Mplus 1c;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 52px;
+    letter-spacing: 0em;
+    color: rgba(186, 73, 73, 1);
+    box-shadow: 0px 6px 0px 0px rgba(235, 235, 235, 1);
+    border-color: rgba(255, 255, 255, 0.1);
+    ;
+
+
+
+
+}
+
+@media (max-width: 576px) {
+    .time-font {
+      font-size: 5rem;
+      line-height: 100px;
+    }
+    .btn-start{
+        width: 10rem;  
+    }
+}
