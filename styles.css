@@ -33,6 +33,8 @@ border: 2px dashed rgba(255, 255, 255, 0.4)
     letter-spacing: 0em;
 }
 
+
+
 .btn-start{
     width: 18rem;
     height: 89px;
@@ -63,6 +65,13 @@ border: 2px dashed rgba(255, 255, 255, 0.4)
     border-radius: 8px;
     border: 2px;
 
+}
+
+.fontC-maroon{
+    color: rgba(84, 28, 31, 1);
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
