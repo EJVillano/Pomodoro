@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "M PLUS Rounded 1c", sans-serif;     
+    font-family: "M PLUS Rounded 1c", sans-serif;
+        
 }
 
 .bg-red{
@@ -64,8 +65,9 @@ border: 2px dashed rgba(255, 255, 255, 0.4)
     left: 603px;
     border-radius: 8px;
     border: 2px;
-
 }
+
+
 
 .fontC-maroon{
     color: rgba(84, 28, 31, 1);
@@ -74,6 +76,42 @@ border: 2px dashed rgba(255, 255, 255, 0.4)
     font-style: normal;
 }
 
+.genSpan{
+    color: rgba(219, 82, 77, 1);
+}
+
+
+.fontP{
+    font-weight: 400;
+    color: rgba(120, 94, 96, 1);
+}
+
+.font-Bold{
+    font-weight: bold; 
+}
+
+
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    
+}
+
+.list li {
+    text-align: center;
+}
+
+.list li::marker {
+    font-weight: bold;
+}
+
+#download .list li::marker {
+    color: rgba(219, 82, 77, 1);
+    font-weight: bold;
+}
 
 @media (max-width: 576px) {
     .time-font {
