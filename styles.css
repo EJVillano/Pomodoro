@@ -6,12 +6,21 @@
         
 }
 
+.bg-blue{
+    background-color: rgba(57, 112, 151, 0.95);
+}
+
+.bg-green{
+    background-color:  rgba(56, 133, 138, 0.95);
+}
+
 .bg-red{
     background-color: rgba(239, 75, 75, 0.95);
 }
 
-.bg-lightRed{
+.bg-timeFrame{
     background-color: rgba(255, 255, 255, 0.1);
+    
 }
 
 .bg-taskBox{
@@ -34,7 +43,11 @@ border: 2px dashed rgba(255, 255, 255, 0.4)
     letter-spacing: 0em;
 }
 
-
+.custom-nav-link.active {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 5px
+  }
 
 .btn-start{
     width: 18rem;
@@ -112,6 +125,8 @@ border: 2px dashed rgba(255, 255, 255, 0.4)
     color: rgba(219, 82, 77, 1);
     font-weight: bold;
 }
+
+
 
 @media (max-width: 576px) {
     .time-font {

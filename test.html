@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pomodoro Timer</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #timer {
+        font-size: 48px;
+        margin: 20px;
+    }
+</style>
+</head>
+<body>
+<h1>Pomodoro Timer</h1>
+<div id="timer">11:00</div>
+<button id="startButton">Start</button>
+<button id="pauseButton">Pause</button>
+<button id="resetButton">Reset</button>
+
+<script>
+    var timerDisplay = document.getElementById('timer');
+    var startButton = document.getElementById('startButton');
+    var pauseButton = document.getElementById('pauseButton');
+    var resetButton = document.getElementById('resetButton');
+
+    var timer;
+    var minutes = 10;
+    var seconds = 0;
+    var isPaused = true;
+
+    function startTimer() {
+        if (isPaused) {
+            timer = setInterval(updateTimer, 1000);
+            isPaused = false;
+            startButton.textContent = 'Resume';
+            pauseButton.disabled = false;
+            resetButton.disabled = false;
+        }
+    }
+
+    function pauseTimer() {
+        clearInterval(timer);
+        isPaused = true;
+        startButton.textContent = 'Resume';
+        pauseButton.disabled = true;
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        minutes = 25;
+        seconds = 0;
+        isPaused = true;
+        updateDisplay();
+        startButton.textContent = 'Start';
+        pauseButton.disabled = true;
+        resetButton.disabled = true;
+    }
+
+    function updateTimer() {
+        if (seconds === 0) {
+            if (minutes === 0) {
+                clearInterval(timer);
+                alert('Pomodoro session completed!');
+                resetTimer();
+                return;
+            }
+            minutes--;
+            seconds = 59;
+        } else {
+            seconds--;
+        }
+        updateDisplay();
+    }
+
+    function updateDisplay() {
+        var displayString = 
+            (minutes < 10 ? "0" + minutes : minutes) + ":" +
+            (seconds < 10 ? "0" + seconds : seconds);
+        timerDisplay.textContent = displayString;
+    }
+
+    startButton.addEventListener('click', startTimer);
+    pauseButton.addEventListener('click', pauseTimer);
+    resetButton.addEventListener('click', resetTimer);
+
+    resetTimer(); // Initialize timer display
+</script>
+</body>
+</html>
