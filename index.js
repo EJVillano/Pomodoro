@@ -83,9 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // timer functions
 function startTimer() {
-    if (isPaused = true){
+    if (isPaused){
         timer = setInterval(updateTimer, 1000);
         isPaused = false;
+        startButton.textContent = 'Pause';
+    }else {
+        clearInterval(timer);
+        isPaused = true;
         startButton.textContent = 'Resume';
     }
 }
@@ -119,7 +123,7 @@ function resetTimer() {
     if (shortBreakMode.classList.contains('active')) {
             minutes = 5; // Set minutes to 5 for short break mode
     } else if (longBreakMode.classList.contains('active')) {
-            minutes = 10; // Set minutes to 10 for long break mode
+            minutes = 15; // Set minutes to 10 for long break mode
     } else {
             minutes = 25; // Set minutes to 25 for pomodoro mode
     }
