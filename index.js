@@ -94,20 +94,64 @@ function startTimer() {
     }
 }
 
+let pomodoroCount = 0; // Counter to track the number of completed pomodoro sessions
+
+// Function to update the timer
 function updateTimer() {
     if (seconds === 0) {
         if (minutes === 0) {
             clearInterval(timer);
-            alert('Pomodoro session completed!');
-            resetTimer();
+            if (pomodoroMode.classList.contains('active')) {
+                
+                pomodoroCount++; // Increment pomodoro session count
+                if (pomodoroCount % 4 === 0) { // Check if it's the 4th pomodoro session
+                    switchToLongBreakMode(); // Switch to long break mode after 4 sessions
+                } else {
+                    switchToShortBreakMode(); // Switch to short break mode
+                }
+            } else if (shortBreakMode.classList.contains('active')) {
+                
+                switchToPomodoroMode(); // Switch back to pomodoro mode after short break
+            } else if (longBreakMode.classList.contains('active')) {
+                
+                resetPomodoroCount(); // Reset pomodoro count after long break
+                switchToPomodoroMode(); // Switch back to pomodoro mode after long break
+            }
             return;
         }
-            minutes--;
-            seconds = 59;
+        minutes--;
+        seconds = 59;
     } else {
         seconds--;
-        }
-        updateDisplay();
+    }
+    updateDisplay();
+}
+
+// Function to reset the pomodoro count
+function resetPomodoroCount() {
+    pomodoroCount = 0;
+}
+
+// Function to switch to short break mode
+function switchToShortBreakMode() {
+    const shortBreakLink = document.getElementById('shortBreak');
+    shortBreakLink.click(); // Simulate click on short break mode link to switch modes
+    
+    
+}
+
+// Function to switch to short break mode
+function switchToPomodoroMode() {
+    const pomodoroLink = document.getElementById('pomodoro');
+    pomodoroLink.click(); // Simulate click on pomodoro mode link to switch modes
+    
+}
+
+// Function to switch to long break mode
+function switchToLongBreakMode() {
+    const longBreakLink = document.getElementById('longBreak');
+    longBreakLink.click(); // Simulate click on long break mode link to switch modes
+    pomodoroCount = 0; // Reset pomodoro count
 }
 
 // timer display 
@@ -123,7 +167,7 @@ function resetTimer() {
     if (shortBreakMode.classList.contains('active')) {
             minutes = 5; // Set minutes to 5 for short break mode
     } else if (longBreakMode.classList.contains('active')) {
-            minutes = 15; // Set minutes to 10 for long break mode
+            minutes = 15; // Set minutes to 15 for long break mode
     } else {
             minutes = 25; // Set minutes to 25 for pomodoro mode
     }
