@@ -1,6 +1,6 @@
-This project aims to clone the Pomofocus Pomodoro website
+This project aims to clone the Pomofocus Pomodoro website.
 The functionality aimed to be accomplished:
-  - 2  page sections(the main timer section and about sections).
+  - 2  page sections (the main timer section and about sections).
   - Working timer function with pause and resume.
   - Working timer display.
   - 3 modes of timer (pomodoro, short break, and long break):
